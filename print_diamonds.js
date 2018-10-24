@@ -23,7 +23,8 @@ const fillSpaceEndWithStar = function(heightOfDiamond){
 }
 
 const filledDiamond = function(heightOfDiamond){
-  let diamond = ""; let unwantedStars = 1;
+  let diamond = ""; 
+  let unwantedStars = 1;
   for(let row = 0; row < heightOfDiamond-1; row++){
     numOfSpacesNeeded = Math.abs((heightOfDiamond - unwantedStars)/2);
     diamond += fillWithSpace(numOfSpacesNeeded);
@@ -39,7 +40,7 @@ const filledDiamond = function(heightOfDiamond){
 
 const hollowDiamond = function(heightOfDiamond){
   let unwantedStars = 3; let diamond = "";
-  numOfSpacesNeeded = Math.abs((heightOfDiamond - unwantedStars)/2 +1);
+  let numOfSpacesNeeded = Math.abs((heightOfDiamond - unwantedStars)/2 +1);
   diamond += fillSpaceEndWithStar(numOfSpacesNeeded) + "\n";
 
   for(let row = 1; row < heightOfDiamond -1; row++){
@@ -62,7 +63,7 @@ const angledDiamond = function(heightOfDiamond){
   let unwantedStars = 3;
   let leftSideSymbol = "/"; 
   let rightSideSymbol = "\\";
-  numOfSpacesNeeded = Math.abs((heightOfDiamond - unwantedStars)/2 + 1 );
+  let numOfSpacesNeeded = Math.abs((heightOfDiamond - unwantedStars)/2 + 1 );
   diamond += fillSpaceEndWithStar(numOfSpacesNeeded) + "\n";
 
   for(let row = 1; row < heightOfDiamond - 1; row++){
@@ -89,7 +90,7 @@ const main = function(){
   let heightOfDiamond = +process.argv[3];
   let diamond;
 
-  if(type == "simple"){
+  if(type == "filled"){
     diamond = filledDiamond(heightOfDiamond);
   }
   if(type == "hollow"){
